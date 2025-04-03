@@ -1,0 +1,143 @@
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    body{
+        height: 98vh;
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .modal{
+        font-size: 1.2em;
+        height: 50%;
+        width: 85%;
+        padding: 30px 50px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 480px;
+        min-height: 200px;
+        min-width: 0px;
+        border-radius: 10px;
+    }
+
+    .modal span{
+        margin-right: 20px;
+    }
+
+    .windowModal{
+        left: 0px;
+        width: 100vw;
+        font-size: 1.1em;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .close{
+        top: 0px;
+        right: 3px;
+    }
+
+    #modalStatistic{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        font-size: 1em;
+    }
+    #modalInfor span{
+        margin: 0px;
+    }
+    .break{
+        flex-basis: 40%;
+    }
+    
+    .btn-modal{
+        margin: 10px;
+        width: 50px;
+        height: 33px;
+        padding: 5px 12px;
+    }
+
+    #formFlex{
+        width: 30em;
+    }
+
+    #formFlex>#btn-submit{
+        width: 50%;
+    }
+
+    #formFlex h1{
+        font-size: 2.75em;
+    }
+
+    #div-result{
+        padding: 5px;
+        max-width: 480px;
+    }
+
+    #outMovie{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;        
+    }
+
+    #outMovie figure{
+        width: 100%;
+    }
+
+    #data{
+        padding: 20px;
+    }
+    #data>h2{
+        font-size: 1.5em;
+    }
+
+    #button>button{
+        margin: 8px;
+    }
+
+    #posterBack{
+        font-size: 1.25em;
+        font-weight: bold;
+        max-height: 600px;
+
+    }
+
+    #posterBack h3{
+        margin: 0px;
+    }
+    #movie>button{
+        margin-top: 155px;
+        padding: 18px 5px;
+    }
+
+    #formFlex>button:hover{
+        letter-spacing: 1px;
+        box-shadow: 6.5px 7px 1px rgba(0,0,0,0.8);
+        transition-duration: .5s;
+    }
+    
+    #movie>button:hover{
+        width: 70%;
+        letter-spacing: 1px;
+        box-shadow: 6.5px 7px 1px rgba(0,0,0,0.8);
+        transition-duration: .5s;
+    }
+
+    
+#game-result>#restart:hover{
+    letter-spacing: 1px;
+    box-shadow: 6.5px 7px 1px rgba(0,0,0,0.8);
+    transition-duration: .5s;
+}
+
+    figcaption h2{
+        font-size: 2.5em;
+    }
+
+}
