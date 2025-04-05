@@ -7,30 +7,21 @@ const outLose= document.querySelector("#outLose")
 const outBalance= document.querySelector("#outBalance")
 const outScore= document.querySelector("#outScore")
 
+const windowInfor = document.querySelector('#windowInfor')
+const modalInfor = document.querySelector('#modalInfor')
+const modalStatistic= document.querySelector("#modalStatistic")
+const windowStatistic= document.querySelector("#windowStatistic")
+const windowModal= document.querySelectorAll(".windowModal")
+
 var victory= 0
 var lose= 0
 
-function modalInfor(){
-    const modalInfor= document.querySelector("#modalInfor")
-    const windowInfor= document.querySelector("#windowInfor")
-
-    modalInfor.classList.add("open")
-    windowInfor.classList.add("open")
-
+function openModalInfor() {
+    windowInfor.classList.add('open')
+    modalInfor.classList.add('open')
 }
 
-function closeModal(event) {
-    let elementId = event.target.id
-    if(elementId == "close" || elementId == windowInfor){
-        print(elementId)
-        windowInfor.classList.remove("open")
-    }
-}
-
-function modalStatistic(){
-    const modalStatistic= document.querySelector("#modalStatistic")
-    const windowStatistic= document.querySelector("#windowStatistic")
-
+function openModalStatistic(){
     modalStatistic.classList.add("open")
     windowStatistic.classList.add("open")
 
@@ -56,6 +47,20 @@ function modalStatistic(){
     }
 }
 
+for(let i = 0; i < windowModal.length; i++) {
+    windowModal[i].addEventListener('click', (e) => {
+        let elementId = e.target.id
+
+        if(e.target.classList.contains('windowModal') || elementId == 'close'){
+            modalStatistic.classList.remove("open")
+            windowStatistic.classList.remove("open")
+            windowInfor.classList.remove('open')
+            modalInfor.classList.remove('open')
+        }
+    })
+}
+
+
 const fetchApi= (value) => {
     const result= fetch(`http://www.omdbapi.com/?T=${value}&apikey=592d8f36`).then((res) => res.json()).then((data) => {
         return data
@@ -70,22 +75,20 @@ const bestDirector=["Martin Scorsese", "Ridley Scott", "Quentin Tarantino", "Fra
 
 
 async function funSubmit(){
-    victory = 0
-    lose = 0
-    const score= (victory * 3) + (lose * -1)
+    let score= (victory * 3) + (lose * -1)
 
-    if(movie.length == 0){
+    if(cont == 10){
         const resultScore= document.querySelector("resultScore")
 
         let scoreMensage= ""
     
-        if(score <= 49){
+        if(score < 2){
             scoreMensage=  `Mais sorte na proxima` 
         }
-        else if(score <= 98){
+        else if(score < 14){
             scoreMensage= `Quase lá`
         }
-        else if(score <= 147){
+        else if(score < 22){
             scoreMensage= `Parabens`
         }
         else{
@@ -95,11 +98,11 @@ async function funSubmit(){
         return outMovie.innerHTML= `Os filmes acabaram 😊 <br>Score: ${score} <br>${scoreMensage}`
         
         
+    } else{
+        newMovie()
     }
 
     divResult.style.display= "block"
-
-    newMovie()
 }
 
 
@@ -115,10 +118,10 @@ const succeed= `
 </div>
 `
 
+var cont = 0
+
 async function newMovie() {
     const randomNumber= Math.round(Math.random() * ((movie.length - 1) - 0) + 0)
-    console.log(randomNumber)
-    console.log(movie[randomNumber])
     const result= await fetchApi(movie[randomNumber])
 
     let ratting= 0
@@ -180,7 +183,6 @@ async function newMovie() {
     const data= document.querySelector("#data")
 
     if(data == null){
-        console.log("OK")
         outMovie.insertAdjacentHTML("beforeend", $htmlMovie)
     }
     else{
@@ -196,15 +198,12 @@ async function newMovie() {
         }
     }
     )
-    console.log("victory: ", victory)
-    console.log("lose: ", lose)
-    console.log("ratting" + ratting)
-    console.log(result)
-    console.log(movie)
 
     const rattingImdb= document.querySelector("#rattingImdb")
+    cont++
+    console.log(cont)
 }
-    async function btnLess(randomNumber, ratting){ 
+async function btnLess(randomNumber, ratting){ 
         const figure= document.querySelector("#figure")
         const button= document.querySelector("#button")
         
@@ -214,7 +213,7 @@ async function newMovie() {
         const result= await fetchApi(movie[randomNumber])
         const rattingMovie= Math.trunc(result.imdbRating)
         const outRatting=  `<img src="img/imdb-logo.png" alt="imagem da logo do IMDb" id="imdb-logo"> 
-        <span id="outRatting">${result.imdbRating}</span> <br> <button  onclick="newMovie()" id="restart">Outro Filme</button>`
+        <span id="outRatting">${result.imdbRating}</span> <br> <button  onclick="funSubmit()" id="restart">Outro Filme</button>`
         if(rattingMovie < ratting){
             gameResult.insertAdjacentHTML("beforeend", succeed + outRatting)
             figure.style.backgroundColor= "var( --color-succeed)";
@@ -228,9 +227,7 @@ async function newMovie() {
         button.style.display= "none";
         
         movie.splice(randomNumber, 1)
-        console.log(result)
-        console.log(rattingMovie)
-        console.log(ratting)
+
 }
 
 
@@ -242,7 +239,7 @@ async function btnEqual(randomNumber, ratting){
     const result= await fetchApi(movie[randomNumber])
     const rattingMovie= Math.trunc(result.imdbRating)
     const outRatting=  `<img src="img/imdb-logo.png" alt="imagem da logo do IMDb" id="imdb-logo"> 
-    <span id="outRatting">${result.imdbRating}</span> <br> <button onclick="newMovie()" id="restart">Outro filme</button>`
+    <span id="outRatting">${result.imdbRating}</span> <br> <button onclick="funSubmit()" id="restart">Outro filme</button>`
     if(ratting == rattingMovie){
         gameResult.insertAdjacentHTML("beforeend", succeed + outRatting)
         figure.style.backgroundColor= "var( --color-succeed)";
@@ -257,9 +254,6 @@ async function btnEqual(randomNumber, ratting){
     button.style.display= "none";
 
     movie.splice(randomNumber, 1)
-    console.log(result)
-    console.log(rattingMovie)
-    console.log(ratting)
 }
 
 async function btnGreater(randomNumber, ratting){
@@ -270,7 +264,7 @@ async function btnGreater(randomNumber, ratting){
     const result= await fetchApi(movie[randomNumber])
     const rattingMovie= Math.trunc(result.imdbRating)
     const outRatting=  `<img src="img/imdb-logo.png" alt="imagem da logo do IMDb" id="imdb-logo"> 
-    <span id="outRatting">${result.imdbRating}</span> <br> <button  onclick="newMovie()"  id="restart">Outro filme</button>`
+    <span id="outRatting">${result.imdbRating}</span> <br> <button  onclick="funSubmit()"  id="restart">Outro filme</button>`
     
     if(ratting < rattingMovie){
         gameResult.insertAdjacentHTML("beforeend", succeed + outRatting)
@@ -285,9 +279,6 @@ async function btnGreater(randomNumber, ratting){
     button.style.display= "none";
 
     movie.splice(randomNumber, 1)
-    console.log(result)
-    console.log(rattingMovie)
-    console.log(ratting)
 }
 
 
