@@ -6,18 +6,21 @@
     <meta name="keywords" content="Filme,Informação,Nota ">
     <title>Document</title>
     <link rel="stylesheet" href="style/main/style.css">
+    <link rel="stylesheet" href="style/phone/stye.css">
+    <link rel="stylesheet" href="style/smalScreens/style.css">
+
 </head>
 <body>
     <div id="form">
         <div id="formFlex">
             
-            <button class="btn-modal" id="button-gameInfor" onclick="modalInfor()">
+            <button class="btn-modal" id="button-gameInfor" onclick="openModalInfor()">
                 <img src="img/interrogacao-icon.png" alt="" >
             </button>
             
             <h1>Filmometer</h1>
 
-            <button class="btn-modal" id="button-gameStatistic" onclick="modalStatistic()">
+            <button class="btn-modal" id="button-gameStatistic" onclick="openModalStatistic()">
                 <img src="img/estatistica-icon.png" alt="">
             </button>
             <br>
@@ -44,7 +47,7 @@
         </div>
     </div>
 
-    <div class="windowModal" id="windowStatistic" onclick="closeModal()">
+    <div class="windowModal" id="windowStatistic">
         <div class="modal" id="modalStatistic">
             <button class="close" id="close">X</button>
             <h1>Estatisticas</h1> 
