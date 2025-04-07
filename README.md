@@ -4,8 +4,8 @@ O projeto é um pequeno jogo que consiste em comparar a nota de um filme com um 
 ## ℹ️ Sobre o Projeto
 O Filmometer é uma aplicação web simples baseada na OMDb API (https://www.omdbapi.com). <br> <br>Foi desenvolvido com as seguintes tecnologias:
 <ul>
-  <li>Linguagens: Javascript, HTML&CSS</li>
-  <li>API: OMDb API</li>
+  <li>Linguagens: Javascript, HTML&CSS;</li>
+  <li>API: OMDb API.</li>
 </ul>
 
 ## 📝 Contribuição
