@@ -5,45 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Filme,Informação,Nota ">
     <title>Document</title>
+    <link rel="stylesheet" href="style/root/style.css">
     <link rel="stylesheet" href="style/main/style.css">
-    <link rel="stylesheet" href="style/phone/stye.css">
-    <link rel="stylesheet" href="style/smalScreens/style.css">
+    <link rel="stylesheet" href="style/small/style.css">
 
 </head>
 <body>
-    <div id="form">
-        <div id="formFlex">
-            
-            <button class="btn-modal" id="button-gameInfor" onclick="openModalInfor()">
-                <img src="img/interrogacao-icon.png" alt="" >
-            </button>
-            
-            <h1>Filmometer</h1>
-
-            <button class="btn-modal" id="button-gameStatistic" onclick="openModalStatistic()">
-                <img src="img/estatistica-icon.png" alt="">
-            </button>
-            <br>
-            <button class="break" id="btn-submit" onclick="funSubmit()">Começar</button>
-            
+    <div id="row1">
+        <div id="form">
+            <div id="row-1-form">
+                <button class="btn-modal" id="button-gameInfor" onclick="openModalInfor()"></button>
+        
+                <h1>Filmometer</h1>
+                <button class="btn-modal" id="button-gameStatistic" onclick="openModalStatistic()"></button>
+            </div>
+            <div id="row-2-form">
+                <button id="btn-submit" onclick="funSubmit()">Começar</button>
+            </div>
         </div>
     </div>
 
-    <div id="div-Result">
-        <div id="outMovie">
+    <div id="row2">
+        <div id="div-Result">
+            <div id="outMovie">
+            </div>
         </div>
-    </div>
-    <div class="windowModal" id="windowInfor">
-        <div class="modal" id="modalInfor">
-            <button class="close" id="close">X</button>
-            <h1>Sobre</h1>
-            <p>Filmometer é um emocionante jogo que desafia sua capacidade de avaliação de filmes. O principal objetivo é comparar a nota de um filme com uma nota gerada aleatoriamente no início de cada rodada. Os jogadores mergulham em um mundo cinematográfico, testando seus conhecimentos e intuições sobre as classificações de filmes.</p>
-            <ol>
-                <li>O jogador inicia uma nova rodada, e uma nota aleatória é gerada, representando a "nota misteriosa" a ser descoberta.</li>
-                <li>Em seguida, é apresentado o título de um filme junto com sua classificação real.</li>
-                <li>O jogador deve decidir se a nota do filme é maior, menor ou igual à nota gerada aleatoriamente.</li>
-                <li>Com base na escolha, os resultados são revelados, e os jogadores acumulam pontos com base na precisão de suas previsões.</li>
-            </ol>
+        <div class="windowModal" id="windowInfor">
+            <div class="modal" id="modalInfor">
+                <button class="close" id="close">X</button>
+                <h1>Sobre</h1>
+                <p>Filmometer é um emocionante jogo que desafia sua capacidade de avaliação de filmes. O principal objetivo é comparar a nota de um filme com uma nota gerada aleatoriamente no início de cada rodada. Os jogadores mergulham em um mundo cinematográfico, testando seus conhecimentos e intuições sobre as classificações de filmes.</p>
+                <ol>
+                    <li>O jogador inicia uma nova rodada, e uma nota aleatória é gerada, representando a "nota misteriosa" a ser descoberta.</li>
+                    <li>Em seguida, é apresentado o título de um filme junto com sua classificação real.</li>
+                    <li>O jogador deve decidir se a nota do filme é maior, menor ou igual à nota gerada aleatoriamente.</li>
+                    <li>Com base na escolha, os resultados são revelados, e os jogadores acumulam pontos com base na precisão de suas previsões.</li>
+                </ol>
+            </div>
         </div>
     </div>
 

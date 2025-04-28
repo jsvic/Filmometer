@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@500&display=swap');
+
+:root{
+    
+    --color-succeed: #6DBC4E;
+    --color-fail: #EA3546;
+   
+    --color-base-body: #F0C808;
+    --color-base-title: #564592;
+    --color-base-btnmodal:#BEB0A7;
+    --color-base-button: #218380;
+    --color-secondary-button: #218380;
+    --color-base-outMovie: #496DDB;
+    --color-base-outMovie-btn: #CEF9F2;
+    --color-base-greater: #45C456;
+    --color-base-less: #F05365;
+    --color-base-equal: #6E7387;
+    --color-base-figure: #F7FFF7;
+    --color-base-figurecaption: #EBE536;
+    --color-base-btnFigure: #C490D1;
+    --color-base-buttonGameResult: #AFC1D6;
+    --color-secondary-buttonGameResult: #905157;
+    --color-base-posterBack: #ACACDE;
+    --color-secondary-posterBack: #A76295;
+    --color-title-posterBack: #41999F;
+    --color-primary-director: #6E46C3;
+    --color-secondary-director: #892F45;
+
+
+    --font-base-form: 'Palanquin Dark', sans-serif;
+    --font-base-outMovie: 'K2D', sans-serif;
+    --font-base-button: 'Ruda', sans-serif;
+
+}
+
+body{
+    background-color: var(--color-base-body);
+    margin: 0px;
+}
+
+button{
+    font-family: var(--font-base-button);
+    color: white;
+    font-weight: 500 ;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+#modalInfor {
+    display: none;
+}
+
+.open{
+    display: flex !important;
+}
+.windowModal{
+    background-color: rgba(0, 0, 0, 0.762);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-base-form);
+    font-size: 1.2em;
+}
+
+
+.modal span{
+    margin-right: 20px;
+}
+
+
+.break{
+    flex-basis: 100%;
+}
+
+#btn-greater:hover{
+    background-color: var(--color-base-greater);
+}
+
+#btn-equal:hover{
+    background-color: var(--color-base-equal);
+}
+
+#btn-less:hover{
+    background-color: var(--color-base-less);
+}

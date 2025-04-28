@@ -1,156 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@500&display=swap');
-
-:root{
+@media (min-width: 500px) {
+body {
+    display: grid;
+    grid-template-rows: .5fr 1fr;
     
-    --color-succeed: #6DBC4E;
-    --color-fail: #EA3546;
-   
-    --color-base-body: #F0C808;
-    --color-base-title: #564592;
-    --color-base-btnmodal:#BEB0A7;
-    --color-base-button: #218380;
-    --color-secondary-button: #218380;
-    --color-base-outMovie: #496DDB;
-    --color-base-outMovie-btn: #CEF9F2;
-    --color-base-greater: #45C456;
-    --color-base-less: #F05365;
-    --color-base-equal: #6E7387;
-    --color-base-figure: #F7FFF7;
-    --color-base-figurecaption: #EBE536;
-    --color-base-btnFigure: #C490D1;
-    --color-base-buttonGameResult: #AFC1D6;
-    --color-secondary-buttonGameResult: #905157;
-    --color-base-posterBack: #ACACDE;
-    --color-secondary-posterBack: #A76295;
-    --color-title-posterBack: #41999F;
-    --color-primary-director: #6E46C3;
-    --color-secondary-director: #892F45;
-
-
-    --font-base-form: 'Palanquin Dark', sans-serif;
-    --font-base-outMovie: 'K2D', sans-serif;
-    --font-base-button: 'Ruda', sans-serif;
-
-}
-
-body{
-    background-color: var(--color-base-body);
-    margin: 0px;
-}
-
-button{
-    font-family: var(--font-base-button);
-    color: white;
-    font-weight: 500 ;
-    font-size: 1.13em;
-    cursor: pointer;
-    transition: .5s ease-in-out;
 }
 
 #form{
-    margin: 20px;
-    margin-bottom: 11em;
-    height: 7em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#formFlex{
     font-family: var(--font-base-form);
     width: 40em;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin: 0 auto;
+    margin-bottom: 2.5em;
 }
 
-#formFlex>h1{
+#form h1{
     color: var(--color-base-title);
     display: inline-block;
     font-size: 3em;
 }
 
 .btn-modal{
-    margin: 50px;
-    width: 70px;
-    height: 40px;
-    padding: 10px 25px;
+    margin: 2em;
+    width: 5em;
+    height: 3em;
+    padding: 1em 2em;
     border-radius: 4px;
     background-color: var(--color-base-btnmodal);
     cursor: pointer;
 }
 
-.windowModal{
-    background-color: rgba(0, 0, 0, 0.762);
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-base-form);
-    font-size: 1.2em;
+#button-gameInfor {
+    background-image: url('../../img/interrogacao-icon.png');
+    background-position: center center;
+    background-size: 30%;
+    background-repeat: no-repeat;
 }
 
-
-.close{
-    position: absolute;
-    top: -10px;
-    right: -14px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background-color: orange;
-    color: white;
-    font-size: 1.3em;
-    cursor: pointer;
-    
+#button-gameStatistic {
+    background-image: url('../../img/estatistica-icon.png');
+    background-position: center center;
+    background-size: 30%;
+    background-repeat: no-repeat;
 }
 
-.modal{
-    width: 80%;
-    min-width: 450px;
-    min-height: 200px;
-    background-color: rgba(255, 255, 255, 0.637);
-    backdrop-filter: blur(10px);
-    padding:  30px;
-    border-radius: 4px;
-    display: none;
-    flex-wrap: wrap;
-}
-
-.modal span{
-    margin-right: 20px;
-}
-
-
-#formFlex img{
+#form img{
     height: 18px;
     width: 18px;
     
 }
 
-.break{
-    flex-basis: 100%;
-}
-
-#formFlex>#btn-submit{
-    margin-top: 50px;
+#form #btn-submit{
+    margin-top: 6em;
     background-color: var(--color-secondary-button);
     border: none;
-    padding: 10px 25px;
+    padding: .75em 2em;
     border-radius: 4px;
 }
 
-#formFlex>button:hover{
+#form  button:hover{
     letter-spacing: 1.5px;
     box-shadow: 6.5px 7px 1px rgba(0,0,0,0.8);
 }
@@ -159,12 +70,12 @@ button{
     display: none;
     background-color: var(--color-base-outMovie);
 }
+
 #outMovie{
-    padding: 6px;
-    margin-top: 50px;
+    padding: 1em;
     border-radius: 4px;
     font-family: var(--font-base-outMovie);
-    width: 33em;
+    width: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,8 +92,8 @@ button{
 }
 
 #button>button{
-    padding: 10px 40px;
-    margin: 15px 20px;
+    padding: .5em 2em;
+    margin: 0em 1em;
     background-color: var(--color-base-outMovie-btn);
     border: none;
     color: black;
@@ -196,16 +107,8 @@ button{
     align-items: center;
 }
 
-#btn-greater:hover{
-    background-color: var(--color-base-greater);
-}
-
-#btn-equal:hover{
-    background-color: var(--color-base-equal);
-}
-
-#btn-less:hover{
-    background-color: var(--color-base-less);
+#data h2 {
+    font-size: 1.45em;
 }
 
 #movie{
@@ -218,8 +121,8 @@ button{
 
 #outMovie figure{
     background-color: var(--color-base-figure);
-    margin-top: 25px;
-    padding: 0px 50px;
+    margin-top: 2em;
+    padding: 0px 3.5em;
     border-radius: 5px;
     width: 70%;
     display: flex;
@@ -238,11 +141,11 @@ button{
 #movie>button{
     background-color: var(--color-base-btnFigure);
     border: none;
-    margin-top: 60px;
+    margin-top: 3em;
     width: 63%;
-    padding: 12px 5px;
+    padding: 1em .5em;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 #movie>button:hover{
@@ -281,13 +184,13 @@ button{
 }
 
 #poster{
-    width: 300px;
-    height: 450px;
-    max-height: 450px;
+    width: 18em;
+    height: 30em;
+    max-height: 30em;
     position: relative;
     transition: transform .75s;
     transform-style: preserve-3d;
-    perspective: 600px;
+    perspective: 60em;
 }
 
 .flip{
@@ -338,11 +241,31 @@ button{
                  0 0 55px  var(--color-primary-director), 
                  0 0 60px  var(--color-primary-director);
 }
-
-#modalInfor {
-    display: none;
+.close{
+    position: absolute;
+    top: -10px;
+    right: -14px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: orange;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+    
 }
 
-.open{
-    display: flex !important;
+.modal{
+    width: 80%;
+    min-width: 450px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.637);
+    backdrop-filter: blur(10px);
+    padding:  30px;
+    border-radius: 4px;
+    display: none;
+    flex-wrap: wrap;
+}
+
 }

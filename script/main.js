@@ -203,6 +203,7 @@ async function newMovie() {
     cont++
     console.log(cont)
 }
+
 async function btnLess(randomNumber, ratting){ 
         const figure= document.querySelector("#figure")
         const button= document.querySelector("#button")
